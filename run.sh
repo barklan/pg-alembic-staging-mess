@@ -30,12 +30,6 @@ function manager:stag {
     scp ./cmd/manager/manager stag:/home/ubuntu/stag/manager
 }
 
-function proto {
-    protoc --go_out=. --go_opt=paths=source_relative \
-    --go-grpc_out=. --go-grpc_opt=paths=source_relative \
-    pkg/protos/main.proto
-}
-
 # -----------------------------------------------------------------------------
 
 function help {
