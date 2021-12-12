@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	pb "github.com/barklan/pg-alembic-staging-mess/pkg/protos"
+	pb "github.com/barklan/fan-in-fan-out/protos"
 	"google.golang.org/grpc"
 )
 
@@ -28,13 +28,13 @@ func Report(message string) (string, error) {
 		return "", err
 	}
 	defer conn.Close()
-	c := pb.NewGreeterClient(conn)
+	c := pb.NewReporterClient(conn)
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 	r, err := c.Report(ctx, &pb.ReportRequest{
-		Message:     message,
-		ProjectName: projectName,
+		Message: message,
+		Token:   projectName,
 	})
 	if err != nil {
 		return "", err

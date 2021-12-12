@@ -3,10 +3,10 @@ module github.com/barklan/pg-alembic-staging-mess
 go 1.17
 
 require (
+	github.com/barklan/fan-in-fan-out v0.0.0-20211212123631-347a71cb618b
 	github.com/docker/docker v20.10.11+incompatible
 	github.com/joho/godotenv v1.4.0
 	google.golang.org/grpc v1.42.0
-	google.golang.org/protobuf v1.27.1
 )
 
 require (
@@ -26,4 +26,5 @@ require (
 	golang.org/x/sys v0.0.0-20211023085530-d6a326fbbf70 // indirect
 	golang.org/x/text v0.3.6 // indirect
 	google.golang.org/genproto v0.0.0-20201110150050-8816d57aaa9a // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
 )
