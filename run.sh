@@ -27,7 +27,7 @@ function manager:stag {
     -ldflags='-w -s -extldflags "-static"' -a \
     -o ./cmd/manager ./cmd/.
 
-    scp ./cmd/manager/manager stag:/home/ubuntu/stag/manager
+    scp ./cmd/manager stag:/home/ubuntu/stag/manager
 }
 
 # -----------------------------------------------------------------------------
